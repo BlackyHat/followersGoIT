@@ -1,0 +1,65 @@
+.pageContainer {
+  flex-grow: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
+  background: linear-gradient(
+    114.99deg,
+    #bfdbd9 -0.99%,
+    #b0c0bf 54.28%,
+    #cfd2d2 78.99%
+  );
+  border-bottom: 1px solid #373737;
+}
+
+.appPage {
+  padding: 40px 32px 32px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+  width: 196px;
+  height: 50px;
+
+  font-style: normal;
+  text-decoration: none;
+  background-color: #ebd8ff;
+  color: #373737;
+  box-shadow: 0px 3px 3px 0px #00000040;
+}
+
+.buttonActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+  width: 196px;
+  height: 50px;
+
+  font-style: normal;
+  text-decoration: none;
+  background-color: #5cd3a8;
+  color: #373737;
+  box-shadow: 0px 3px 3.4369285106658936px 0px #00000040;
+}

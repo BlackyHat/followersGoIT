@@ -1,0 +1,107 @@
+.cardBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 380px;
+  padding: 36px;
+  border-radius: 20px;
+  background: url('../../images/cardBg_x1.png') no-repeat top 28px center,
+    linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
+  box-shadow: -3px 9px 21px 0px #0000003b;
+  transition: box-shadow linear 350ms;
+}
+.cardBox:hover {
+  box-shadow: 3px 12px 25px 4px #0000009c;
+}
+
+@media (max-width: 378px) {
+  .cardBox {
+    width: 100%;
+  }
+}
+@media (min-width: 379px) {
+  .cardBox {
+    width: 380px;
+  }
+}
+.labelInner {
+  margin: 214px 0 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.cardLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ebd8ff;
+}
+
+.border {
+  display: block;
+  background: #ebd8ff;
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 8px solid #ebd8ff;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+  width: 196px;
+  height: 50px;
+  cursor: pointer;
+  font-style: normal;
+  text-decoration: none;
+  background-color: #ebd8ff;
+  color: #373737;
+  border: none;
+  transition: box-shadow linear 350ms;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 3px 3px #5cd3a8, 0 0 3px 3px #373737;
+}
+
+.buttonActive {
+  background-color: #5cd3a8;
+}
+
+.buttonActive:hover {
+  box-shadow: inset 0 0 3px 3px #373737, 0 0 3px 3px #5cd3a8;
+}

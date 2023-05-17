@@ -1,0 +1,16 @@
+.tweetsContainer {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 48px;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 378px) {
+  .tweetsContainer {
+    flex-direction: column;
+  }
+}
