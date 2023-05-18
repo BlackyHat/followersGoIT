@@ -8,8 +8,6 @@ import { ReactComponent as Logo } from '../../images/logo_GoIT.svg';
 import css from './TweetCard.module.css';
 
 const TweetCard = ({ isFollowing, userInfo }) => {
-  console.log(userInfo);
-  console.log(typeof userInfo);
   const dispatch = useDispatch();
   let { id, avatar, tweets, followers, user } = userInfo;
   const onFollow = e => {

@@ -1,9 +1,15 @@
-import PropTypes from 'prop-types';
 import css from './FilterTweets.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from 'redux/users/users.slice';
+import { selectFilter } from 'redux/users/users.selectors';
+import { FILTER } from 'constants/filter.constants';
 
-const FilterTweets = ({ onFilter, filter }) => {
+const FilterTweets = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+
   const handleOptionChange = option => {
-    onFilter && onFilter(option);
+    dispatch(setFilter(option));
   };
 
   return (
@@ -14,19 +20,19 @@ const FilterTweets = ({ onFilter, filter }) => {
       <ul className={css.dropdownMenu}>
         <li
           className={css.dropdownItem}
-          onClick={() => handleOptionChange('show all')}
+          onClick={() => handleOptionChange(FILTER.showAll)}
         >
           show all
         </li>
         <li
           className={css.dropdownItem}
-          onClick={() => handleOptionChange('follow')}
+          onClick={() => handleOptionChange(FILTER.follow)}
         >
           follow
         </li>
         <li
           className={css.dropdownItem}
-          onClick={() => handleOptionChange('followings')}
+          onClick={() => handleOptionChange(FILTER.followings)}
         >
           followings
         </li>
@@ -36,8 +42,3 @@ const FilterTweets = ({ onFilter, filter }) => {
 };
 
 export default FilterTweets;
-
-FilterTweets.propTypes = {
-  onFilter: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-};

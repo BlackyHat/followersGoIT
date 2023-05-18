@@ -1,15 +1,21 @@
-import { Spinner, Center } from '@chakra-ui/react';
+import { MutatingDots } from 'react-loader-spinner';
+import css from './Loading.module.css';
+
 const Loading = () => {
   return (
-    <Center pt="24">
-      <Spinner
-        thickness="4px"
-        speed="0.55s"
-        emptyColor="gray.200"
-        color="red.500"
-        size="xl"
+    <div>
+      <MutatingDots
+        height="100"
+        width="100"
+        color="#5cd3a8"
+        secondaryColor="#5cd3a8"
+        radius="12.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass={css.box}
+        visible={true}
       />
-    </Center>
+    </div>
   );
 };
 

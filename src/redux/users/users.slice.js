@@ -16,7 +16,14 @@ const handleRejected = (state, action) => {
 const usersSlice = createSlice({
   name: 'users',
   initialState: usersInitState,
-  reducers: {},
+  reducers: {
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(fetchUsers.pending, handlePending)
@@ -25,7 +32,7 @@ const usersSlice = createSlice({
       .addCase(followUser.rejected, handleRejected)
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.status = STATUS.success;
-        state.users.push(...action.payload);
+        state.users = action.payload;
       })
       .addCase(followUser.fulfilled, (state, action) => {
         state.status = STATUS.success;
@@ -37,3 +44,4 @@ const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
+export const { setPage, setFilter } = usersSlice.actions;

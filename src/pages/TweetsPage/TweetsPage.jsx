@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from 'redux/users/users.operations';
-import { selectUsersBySubs } from 'redux/users/users.selectors';
-import { selectSubs } from 'redux/subscription/subscription.selectors';
 
 import TweetsList from 'components/TweetsList/TweetsList';
 import FilterTweets from 'components/FilterTweets/FilterTweets';
 import css from './TweetsPage.module.css';
 import { BiLeftArrowCircle } from 'react-icons/bi';
+import { selectPage, selectStatus } from 'redux/users/users.selectors';
+import { setPage } from 'redux/users/users.slice';
+import { STATUS } from 'constants/status.constants';
+import Loading from 'components/Loading/Loading';
 
 const TweetsPage = () => {
   const dispatch = useDispatch();
-  const subs = useSelector(selectSubs);
-  const [filter, setFilter] = useState('show all');
-  const users = useSelector(selectUsersBySubs(filter));
-  const [page, setPage] = useState(1);
+  const page = useSelector(selectPage);
+  const status = useSelector(selectStatus);
 
   useEffect(() => {
     dispatch(fetchUsers(page));
   }, [dispatch, page]);
 
   const loadMore = () => {
-    setPage(page => page + 1);
+    dispatch(setPage(page + 1));
   };
 
   const location = useLocation();
@@ -35,12 +35,16 @@ const TweetsPage = () => {
           <BiLeftArrowCircle className={css.linkIcon} />
           Back to HomePage
         </Link>
-        <FilterTweets onFilter={setFilter} filter={filter} />
+        <FilterTweets />
       </div>
-      <TweetsList subs={subs} users={users} />
-      <button className={css.button} onClick={loadMore}>
-        Load More...
-      </button>
+      <TweetsList />
+      {status === STATUS.loading ? (
+        <Loading />
+      ) : (
+        <button className={css.button} onClick={loadMore}>
+          Load More...
+        </button>
+      )}
     </section>
   );
 };

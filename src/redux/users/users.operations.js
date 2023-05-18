@@ -8,7 +8,7 @@ export const fetchUsers = createAsyncThunk(
       const { data } = await tweetsApi.get(`users`, {
         params: {
           page,
-          limit: 3,
+          limit: page * 3,
         },
       });
       return data;

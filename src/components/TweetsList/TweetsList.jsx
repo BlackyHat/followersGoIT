@@ -1,8 +1,13 @@
-import PropTypes from 'prop-types';
-import css from './TweetsList.module.css';
-import TweetCard from 'components/TweetCard/TweetCard';
+import { useSelector } from 'react-redux';
+import { selectUsersBySubs } from 'redux/users/users.selectors';
+import { selectSubs } from 'redux/subscription/subscription.selectors';
 
-const TweetsList = ({ subs, users }) => {
+import TweetCard from 'components/TweetCard/TweetCard';
+import css from './TweetsList.module.css';
+
+const TweetsList = () => {
+  const subs = useSelector(selectSubs);
+  const users = useSelector(selectUsersBySubs);
   const checkIsFollowing = (subs, id) => {
     return subs.includes(id);
   };
@@ -23,16 +28,3 @@ const TweetsList = ({ subs, users }) => {
 };
 
 export default TweetsList;
-
-TweetsList.propTypes = {
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      tweets: PropTypes.number.isRequired,
-      followers: PropTypes.number.isRequired,
-      user: PropTypes.string.isRequired,
-    })
-  ),
-  subs: PropTypes.array.isRequired,
-};

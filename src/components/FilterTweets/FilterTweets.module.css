@@ -14,6 +14,11 @@
   border-radius: 12px;
   width: 196px;
   height: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
 }
 
 .dropdownMenu {
@@ -34,6 +39,11 @@
 .dropdownMenu li {
   padding: 8px 12px;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
 }
 
 .dropdownMenu li:hover {
