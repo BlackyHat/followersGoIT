@@ -4,7 +4,7 @@ Create tweet cards and add interactivity when you click on a button.
 
 ## Demo
 
-Insert gif or link to demo
+[LINK](https://blackyhat.github.io/followersGoIT)
 
 ![Unfollow Card](src/images/unfollow_card.png)
 ![Follow Card](src/images/following_card.png)
