@@ -14,7 +14,8 @@
   padding: 24px 12px 32px;
 }
 
-.cardList {
+.cardList,
+.descList {
   list-style: none;
   margin: 0 auto;
   text-align: center;
@@ -22,12 +23,14 @@
 }
 
 @media (min-width: 768px) {
-  .cardList {
+  .cardList,
+  .descList {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    max-width: 1280px;
   }
 }
 
@@ -35,4 +38,28 @@
   width: 100%;
   object-fit: contain;
   max-width: 380px;
+}
+
+.featuresTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #373737;
+}
+.featuresMeta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #373737;
+}
+
+.label {
+  font-weight: 600;
+}
+.featuresInfo {
+  margin: 0;
 }

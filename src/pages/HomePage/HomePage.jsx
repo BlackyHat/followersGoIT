@@ -40,6 +40,35 @@ const HomePage = () => {
           </picture>
         </li>
       </ul>
+      <ul className={css.descList}>
+        <li>
+          <h2 className={css.featuresTitle}>Features</h2>
+          <p className={css.featuresMeta}>
+            User cards according to the template When you click on the Follow
+            button, the text changes to Following. Also the color of the button
+            changes. And the number of followers is added. When updating the
+            page, the final result of the user's actions should be recorded The
+            app have two routes: '/' - the Home component; '/tweets' - the
+            tweets component, the page with tweets displayed. If a user enters
+            the app via a non-existent route, the user must be redirected to the
+            home page. Add filtering Dropdown with 3 options: show all - show
+            all tweets, follow - show tweets that have a follow status,
+            followings - show tweets with the following status
+          </p>
+        </li>
+        <li>
+          <h2 className={css.featuresTitle}>Tech Stack</h2>
+          <div className={css.featuresMeta}>
+            <p className={css.featuresInfo}>
+              <span className={css.label}>[FrontEnd]</span> React, Redux
+              Toolkit, React Router Dom, Axios, Module CSS
+            </p>
+            <p className={css.featuresInfo}>
+              <span className={css.label}>[BackEnd]</span> Mockapi.io
+            </p>
+          </div>
+        </li>
+      </ul>
     </section>
   );
 };
