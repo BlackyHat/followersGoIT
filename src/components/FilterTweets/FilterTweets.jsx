@@ -2,7 +2,7 @@ import css from './FilterTweets.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/users/users.slice';
 import { selectFilter } from 'redux/users/users.selectors';
-import { FILTER } from 'constants/filter.constants';
+import { FILTER } from 'constants';
 
 const FilterTweets = () => {
   const dispatch = useDispatch();

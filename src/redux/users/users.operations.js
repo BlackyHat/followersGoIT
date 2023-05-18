@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { tweetsApi } from 'services/tweetsApi';
+import { tweetsApi } from 'services';
+import { setLoadedPages } from './users.slice';
 
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
@@ -8,9 +9,11 @@ export const fetchUsers = createAsyncThunk(
       const { data } = await tweetsApi.get(`users`, {
         params: {
           page,
-          limit: page * 3,
+          limit: 3,
         },
       });
+      thunkAPI.dispatch(setLoadedPages(page));
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

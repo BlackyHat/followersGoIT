@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from 'redux/users/users.operations';
@@ -7,22 +7,24 @@ import TweetsList from 'components/TweetsList/TweetsList';
 import FilterTweets from 'components/FilterTweets/FilterTweets';
 import css from './TweetsPage.module.css';
 import { BiLeftArrowCircle } from 'react-icons/bi';
-import { selectPage, selectStatus } from 'redux/users/users.selectors';
-import { setPage } from 'redux/users/users.slice';
-import { STATUS } from 'constants/status.constants';
+import { selectLoadedPages, selectStatus } from 'redux/users/users.selectors';
+import { STATUS } from 'constants';
 import Loading from 'components/Loading/Loading';
 
 const TweetsPage = () => {
   const dispatch = useDispatch();
-  const page = useSelector(selectPage);
+  const loadedPages = useSelector(selectLoadedPages);
   const status = useSelector(selectStatus);
+  const [page, SetPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchUsers(page));
-  }, [dispatch, page]);
+    if (loadedPages < page) {
+      dispatch(fetchUsers(page));
+    }
+  }, [dispatch, page, loadedPages]);
 
   const loadMore = () => {
-    dispatch(setPage(page + 1));
+    SetPage(page => page + 1);
   };
 
   const location = useLocation();

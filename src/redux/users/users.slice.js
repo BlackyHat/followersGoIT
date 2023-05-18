@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { usersInitState } from './users.init-state';
 import { fetchUsers, followUser } from './users.operations';
-import { STATUS } from '../../constants/status.constants';
+import { STATUS } from '../../constants';
 
 const handlePending = state => {
   state.status = STATUS.loading;
@@ -20,8 +20,8 @@ const usersSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
-    setPage: (state, action) => {
-      state.page = action.payload;
+    setLoadedPages: (state, action) => {
+      state.loadedPages = action.payload;
     },
   },
   extraReducers: builder =>
@@ -32,7 +32,7 @@ const usersSlice = createSlice({
       .addCase(followUser.rejected, handleRejected)
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.status = STATUS.success;
-        state.users = action.payload;
+        state.users.push(...action.payload);
       })
       .addCase(followUser.fulfilled, (state, action) => {
         state.status = STATUS.success;
@@ -44,4 +44,4 @@ const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
-export const { setPage, setFilter } = usersSlice.actions;
+export const { setLoadedPages, setFilter } = usersSlice.actions;

@@ -1,8 +1,8 @@
-import { STATUS } from '../../constants/status.constants';
+import { STATUS } from '../../constants';
 
 export const usersInitState = {
   users: [],
   filter: 'show all',
-  page: 1,
+  loadedPages: 0,
   status: STATUS.idle,
 };

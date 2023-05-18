@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const Layout = lazy(() => import('./Layout/Layout'));
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const TweetsPage = lazy(() => import('../pages/TweetsPage/TweetsPage'));
+const Layout = lazy(() => import('./Layout'));
+const HomePage = lazy(() => import('../pages/HomePage'));
+const TweetsPage = lazy(() => import('../pages/TweetsPage'));
 
 export const App = () => {
   return (

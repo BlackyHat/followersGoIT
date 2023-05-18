@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectUsersBySubs } from 'redux/users/users.selectors';
 import { selectSubs } from 'redux/subscription/subscription.selectors';
 
-import TweetCard from 'components/TweetCard/TweetCard';
+import TweetCard from 'components/TweetCard';
 import css from './TweetsList.module.css';
 
 const TweetsList = () => {
