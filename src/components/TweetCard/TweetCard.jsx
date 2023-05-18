@@ -8,6 +8,8 @@ import { ReactComponent as Logo } from '../../images/logo_GoIT.svg';
 import css from './TweetCard.module.css';
 
 const TweetCard = ({ isFollowing, userInfo }) => {
+  console.log(userInfo);
+  console.log(typeof userInfo);
   const dispatch = useDispatch();
   let { id, avatar, tweets, followers, user } = userInfo;
   const onFollow = e => {
@@ -49,14 +51,12 @@ const TweetCard = ({ isFollowing, userInfo }) => {
 export default TweetCard;
 
 TweetCard.propTypes = {
-  userInfo: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      tweets: PropTypes.number.isRequired,
-      followers: PropTypes.number.isRequired,
-      user: PropTypes.string.isRequired,
-    })
-  ),
+  userInfo: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    user: PropTypes.string.isRequired,
+  }),
   isFollowing: PropTypes.bool,
 };
