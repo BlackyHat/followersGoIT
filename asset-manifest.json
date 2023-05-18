@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/followersGoIT/static/css/main.1a91934e.css",
+    "main.js": "/followersGoIT/static/js/main.cfcbd94b.js",
+    "static/css/101.da36d22e.chunk.css": "/followersGoIT/static/css/101.da36d22e.chunk.css",
+    "static/js/101.78867823.chunk.js": "/followersGoIT/static/js/101.78867823.chunk.js",
+    "static/js/983.2d8a7113.chunk.js": "/followersGoIT/static/js/983.2d8a7113.chunk.js",
+    "static/css/782.68123399.chunk.css": "/followersGoIT/static/css/782.68123399.chunk.css",
+    "static/js/782.6aad7db6.chunk.js": "/followersGoIT/static/js/782.6aad7db6.chunk.js",
+    "static/js/589.ddbad15e.chunk.js": "/followersGoIT/static/js/589.ddbad15e.chunk.js",
+    "static/media/cardBg_x1.png": "/followersGoIT/static/media/cardBg_x1.032662a2a907475127d7.png",
+    "static/media/logo_GoIT.svg": "/followersGoIT/static/media/logo_GoIT.e917114d7945c04c85a8946a331d28b6.svg",
+    "index.html": "/followersGoIT/index.html",
+    "main.1a91934e.css.map": "/followersGoIT/static/css/main.1a91934e.css.map",
+    "main.cfcbd94b.js.map": "/followersGoIT/static/js/main.cfcbd94b.js.map",
+    "101.da36d22e.chunk.css.map": "/followersGoIT/static/css/101.da36d22e.chunk.css.map",
+    "101.78867823.chunk.js.map": "/followersGoIT/static/js/101.78867823.chunk.js.map",
+    "983.2d8a7113.chunk.js.map": "/followersGoIT/static/js/983.2d8a7113.chunk.js.map",
+    "782.68123399.chunk.css.map": "/followersGoIT/static/css/782.68123399.chunk.css.map",
+    "782.6aad7db6.chunk.js.map": "/followersGoIT/static/js/782.6aad7db6.chunk.js.map",
+    "589.ddbad15e.chunk.js.map": "/followersGoIT/static/js/589.ddbad15e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a91934e.css",
+    "static/js/main.cfcbd94b.js"
+  ]
+}
